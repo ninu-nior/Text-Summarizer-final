@@ -5,12 +5,12 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 # repo name from git
-REPO_NAME = "Text_Summarizer"
+REPO_NAME = "Text-Summarizer-final"
 AUTHOR_USER_NAME = "ninu-nior"
 # the project name inside src is your source repo name
 SRC_REPO = "textSummarizer"
 AUTHOR_EMAIL = "nehalsmantri@gmail.com"
-
+#it will look for contructor file in every folder and it will install it as a local package
 setuptools.setup(
     name=SRC_REPO,
     version=__version__,

@@ -1,0 +1,46 @@
+workflows
+1 update config.yaml
+2 update params.yaml
+3 update entity(inside src)
+4 update the configuration manager in src config(configration manager is configuration.py)
+5 update components
+6 update the pipeline
+7 update the main.py
+8 update the app.py
+
+
+
+first create a git repository, initialize it with readme, then upload the downloaded dataset by drag
+and drop and then click on that file, right click on raw, copy link address, then that is the link address
+we will use to download the dataset
+https://github.com/ninu-nior/samsum_dataset/raw/main/summarizer-data.zip
+
+now we can start implementing the data ingestion components, but before implementing it, we will do the notebook
+experiment, after the notebook s running, we can convert it into modular coding
+
+create a file, data_ingestion.ipynb in the research, and in that, change the directory to root, so that whatever 
+we do, reflects in the root dir not the particular dir
+
+then go to config.yaml
+in that write artifacts_root-artifacts: it will create an artifacts folder, and all the generation from the components, will 
+be saved in the this folder
+now we have to create the data ingestion related configuration.
+if we need some path or url, we can store these things in config.yaml, we can read it from here and use it later on
+root name is data_ingestion and in that we have defined subfolders,it will download the data in artifacts/dataingestion
+it will download it as data.zip,and unzip in the specified dir
+advantage of this configuration file, if in future we want to add a new path and change the dir name, so the changes we do in yaml file will reflect in the entire code
+ 
+then open the notebook again, the dataingestion one, now since we dont have any parameters rn, we will 
+move on to the entities
+now entity is nothing but return type of a function, now how can we define the return type of a function, 
+for that you can use dataclass
+now define a decorator
+#this is not a python actual class, it is a data class, you can mention your variables here
+#this eentire thing is an entity, it is the return type of a function
+#whenever we create data ingestion configuration, at the time, dataingestionclass will return these variables
+#we can take these variables and use it, when we call root_dir, it will automatically return that path mentioned in yaml
+
+
+now we will update the configuration manager in src config
+first create the constants, the file path of config.yaml and file path of params.yaml (for now)
+then import it in the notebook
