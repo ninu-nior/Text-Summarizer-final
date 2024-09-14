@@ -43,4 +43,15 @@ now define a decorator
 
 now we will update the configuration manager in src config
 first create the constants, the file path of config.yaml and file path of params.yaml (for now)
-then import it in the notebook
+then import it in the 
+
+
+
+
+
+
+
+
+
+
+data validation, checks if the data folders, etc are present or in correct format or not
